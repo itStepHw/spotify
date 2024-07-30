@@ -1,0 +1,11 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Удалить плейлист{% endblock title %}
+
+
+{% block content %}
+    <p class="text">Вы действительно хотите удалить плейлист : {{ playlist.name }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button>Подтвердить</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}История{% endblock title %}
+
+{% block content %}
+
+    <h1 class="text">История прослушиваний</h1>
+
+    <div class="vertical">
+        {% for history in histories %}
+            <div class="vertical_item text">
+                <audio controls>
+                    <source src="{{ history.music.file.url }}">
+                </audio>
+                {{ history.music.name }} | {{ history.listened_at }}
+            </div>
+            {% empty %}
+                <p class="text">Вы еще не прослушали песни</p>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+
+{% endblock content %}

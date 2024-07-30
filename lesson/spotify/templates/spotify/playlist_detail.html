@@ -1,0 +1,32 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Музыка{% endblock title %}
+
+{% block content %}
+
+    <h1 class="text">Плейлист: {{ playlist.name }}</h1>
+
+
+    <a class="text" href="{% url 'delete_playlist' pk=playlist.id %}">Удалить плейлист: {{ playlist.name }}</a>
+
+    <div class="vertical">
+        {% for music in playlist.musics.all %}
+            <div class="vertical_item text">
+                <audio controls>
+                    <source src="{{ music.file.url }}">
+                </audio>
+                {{ music.name }}
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button name="delete_button" value="{{ music.id }}">Удалить</button>
+                </form>
+            </div>
+
+            {% empty %}
+                <p class="text">Вы еще не прослушали песни</p>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock content %}

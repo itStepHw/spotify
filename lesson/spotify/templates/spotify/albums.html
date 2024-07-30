@@ -1,0 +1,19 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Альбом{% endblock title %}
+{% block content %}
+    <div class="genres">
+        {% for album in albums %}
+        <a href="{% url 'album_detail_view' pk=album.id %}">
+            <div class="genre">
+                <span><img src="{{ album.image.url }}"></span>
+                <div class="genres_content">
+                    <span>{{ album.name }}</span>
+                </div>
+            </div>
+            {% empty %}
+                <p>Жанров пока нет</p>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

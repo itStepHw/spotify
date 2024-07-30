@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'user_app/css/style.css' %}">
+    <title>{% block title %} Default title {% endblock %}</title>
+</head>
+<body>
+
+    <div class="contaner">
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+        <footer></footer>
+    </div>
+
+</body>
+</html>

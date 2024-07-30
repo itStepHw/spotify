@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #191414;
+}
+.main{
+    padding: 20px;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #1DB954;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.genres, .musics{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.genres a{
+    text-decoration: none;
+    color: inherit;
+}
+.genre:hover{
+    scale: 1.1;
+}
+.genres_content{
+    padding: 5px;
+    font-family: Calibri, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px;
+    align-items: center;
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Calibri, serif;
+}
+.logo a{
+    text-decoration: none;
+    color: inherit;
+}
+.genre{
+    background-color: #1DB954;
+    height: max-content;
+    width: max-content;
+}
+.genre img{
+    width: 120px;
+    height: auto;
+}
+h1{
+    color: #1DB954;
+    margin-bottom: 20px;
+    font-family: Calibri;
+}
+.text{
+    color: #1DB954;
+}
+.main_header a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.vertical_item{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #1DB954;
+    padding: 10px;
+
+}

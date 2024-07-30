@@ -1,0 +1,15 @@
+{% extends 'user_app/layouts/base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+
+{% block main %}
+    <h2>Регистрация</h2>
+    <form class="form" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        {{ register_form }}
+        <button type="submit">Войти</button>
+    </form>
+{% endblock %}

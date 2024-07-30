@@ -1,0 +1,25 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Музыка{% endblock title %}
+
+
+{% block content %}
+    <div class="genre genres_content">
+        <img src="{{ music.image.url }}" alt="">
+        <p>Название: {{ music.name }}</p>
+        <p>Жанры: {{ genres_str }}</p>
+        <audio controls>
+            <source src="{{ music.file.url }}">
+        </audio>
+        <form action="" name="add_to_playlist" method="post">
+            {% csrf_token %}
+            <select name="playlist">
+                {% for playlist in playlists %}
+                    <option value="{{ playlist.id }}">{{ playlist.name }}</option>
+                {% endfor %}
+                <option disabled selected>Выбрать плейлист</option>
+            </select>
+            <button type="submit">Добавить</button>
+        </form>
+
+    </div>
+{% endblock content %}

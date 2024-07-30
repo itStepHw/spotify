@@ -1,0 +1,31 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Плейлисты{% endblock title %}
+
+{% block content %}
+    <h1 class="text">Плейлисты</h1>
+
+        <div>
+            <form class="form" action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button>Добавить</button>
+            </form>
+        </div>
+
+
+        <div class="genres">
+        {% for playlist in new_playlists %}
+        <a href="{% url 'playlist_detail' pk=playlist.id %}">
+            <div class="genre">
+                <span><img src="/media/{{ playlist.image }}"></span>
+                <div class="genres_content">
+                    <span>{{ playlist.name }}</span>
+                </div>
+            </div>
+            {% empty %}
+                <p class="text">Плейлистов пока нет</p>
+        </a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

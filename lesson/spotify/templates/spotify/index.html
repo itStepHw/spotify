@@ -1,0 +1,19 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Жанры{% endblock title %}
+{% block content %}
+    <div class="genres">
+        {% for genre in genres %}
+        <a href="{% url 'genre_music' pk=genre.id %}">
+            <div class="genre">
+                <span><img src="{{ genre.image.url }}"></span>
+                <div class="genres_content">
+                    <span>{{ genre.name }}</span>
+                </div>
+            </div>
+            {% empty %}
+                <p>Жанров пока нет</p>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

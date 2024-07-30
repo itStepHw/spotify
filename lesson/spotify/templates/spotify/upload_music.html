@@ -1,0 +1,12 @@
+{% extends 'spotify/base/base.html' %}
+{% block title %}Добавить музыку{% endblock title %}
+
+{% block content %}
+    <h1 class="text">Добавить музыку</h1>
+
+    <form class="form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Загрузить</button>
+    </form>
+{% endblock content %}
